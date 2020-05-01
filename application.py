@@ -37,14 +37,7 @@ class Application(flask.Flask):
 
         return instance
 
+
 application = Application.create()
-
-
-@application.cli.command()
-def create_database():
-    from extensions.database import db
-
-    db.create_all()
-
 
 application.run()

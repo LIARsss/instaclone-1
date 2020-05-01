@@ -5,7 +5,8 @@
 {% block title %}Login{% endblock %}
 
 {% block body %}
-    <form action="" method="post">
+<div class="login_block">
+    <form action="" method="post" id="login_block">
         {{ form.csrf_token }}
 
         {{ render_field(form.email) }}
@@ -14,7 +15,7 @@
 
         <input type="submit" value="Login">
     </form>
-
+</div>
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             <ul>
