@@ -13,7 +13,7 @@ from wtforms.validators import (
     EqualTo,
 )
 
-from database import db
+from extensions.database import db
 
 from applications.users import models
 import exceptions
