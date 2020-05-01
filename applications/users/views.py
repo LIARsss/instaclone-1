@@ -4,12 +4,14 @@ from flask.views import MethodView
 
 from exceptions import LoginException
 
-import forms
+from applications.users.models import User
+from applications.users import forms
+from applications.views import FormViewMixin
 
 
 class UserRegistrationView(MethodView, FormViewMixin):
     form_class = forms.RegistrationForm
-    template_name = 'registration.html'
+    template_name = 'users/registration.html'
 
     def post(self):
         form = self.get_form()
@@ -25,7 +27,7 @@ class UserRegistrationView(MethodView, FormViewMixin):
 
 class UserLoginView(MethodView, FormViewMixin):
     form_class = forms.LoginForm
-    template_name = 'login.html'
+    template_name = 'users/login.html'
 
     def post(self):
         form = self.get_form()
@@ -51,6 +53,6 @@ class UserProfileView(MethodView):
             return 'User not found!', 404
 
         return flask.render_template(
-            template_name_or_list='profile_photos.html',
+            template_name_or_list='users/profile_photos.html',
             photos=user.photos,
         )

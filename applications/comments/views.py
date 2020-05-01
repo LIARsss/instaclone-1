@@ -9,10 +9,7 @@ from flask_login import (
 
 from database import db
 
-from models import (
-    User,
-    Photo,
-)
+from applications.photos.models import Photo
 
 
 class AddCommentView(MethodView):

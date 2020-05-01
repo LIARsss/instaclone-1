@@ -3,6 +3,9 @@ from flask import url_for
 from database import db
 from exceptions import CoreException
 
+from applications.likes.models import Like
+from applications.comments.models import Comment
+
 
 class Photo(db.Model):
     id = db.Column(

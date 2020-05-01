@@ -4,17 +4,18 @@ from flask.views import MethodView
 
 from flask_login import login_required
 
-from models import (
-    User,
+from applications.photos.models import (
     Photo,
 )
 
-import forms
+from applications.photos import  forms
+from applications.views import FormViewMixin
+
 
 
 class UploadPhotoView(MethodView, FormViewMixin):
     form_class = forms.PhotoForm
-    template_name = 'upload_photo.html'
+    template_name = 'photos/upload_photo.html'
 
     decorators = [
         login_required,
@@ -52,6 +53,6 @@ class PhotoDetailView(MethodView):
             return 'Photo not found', 404
 
         return flask.render_template(
-            template_name_or_list='photo_detail.html',
+            template_name_or_list='photos/photo_detail.html',
             photo=photo,
         )

@@ -14,7 +14,7 @@ from flask_wtf.file import (
 
 from database import db
 
-import models
+from applications.photos import models
 
 
 class PhotoForm(FlaskForm):

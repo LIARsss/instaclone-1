@@ -9,10 +9,7 @@ from werkzeug.exceptions import BadRequest
 
 from database import db
 
-from models import (
-    User,
-    Photo,
-)
+from applications.photos.models import Photo
 
 from exceptions import CoreException
 
