@@ -1,5 +1,3 @@
-#Instaclone
-
 # How to create virtual environment
 `virtualenv .venv`
 
@@ -14,4 +12,11 @@
 
 # How to update project code
 `git fetch upstream`
-`Git -> upstream/master -> Merge Into Current
+`Git -> upstream/master -> Merge Into Current`
+
+# MacOS / Linux
+FLASK_APP="instaclone.application:create_application('settings/development.py')" flask run
+
+# Windows:
+set FLASK_APP=instaclone.application:create_application('settings/development.py')
+flask run
